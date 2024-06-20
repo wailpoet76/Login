@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sgin In</title>
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="Style/Norm/all.min.css">
+    <!-- Awsome -->
+    <link rel="stylesheet" href="Style/Norm/all.min.css">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="Style/login.css">
+
+</head>
+
+<body>
+    <!-- ********************************************* -->
+    <!-- ********************************************* -->
+    <!-- START Form Container -->
+    <!-- ********************************************* -->
+    <!-- ********************************************* -->
+
+
+    <div class="container ">
+        <!-- ********************************************* -->
+        <!-- START Register Form  -->
+        <!-- ********************************************* -->
+        <div class="form Registration ">
+            <h1>Registration</h1>
+            <form action="PHP/Register.php" method="post" class="register ">
+                <!-- <form action="" method=" post" class="register active"> -->
+                <h3>Personal Information</h3>
+                <div class="personal info">
+                    <div class="inpData">
+                        <label for=""> Full Name</label>
+                        <input type="text" id="nameEn" name="nameEn" class="inp name" placeholder="Name in English"
+                            autocomplete="username" required data-state='invalid'>
+                        <div class="toolTip" hidden>Insert your full name</div>
+                    </div>
+                    <div class="inpData Arabic">
+                        <label for="" class="inp nameAr"> الأسم بالكامل</label>
+                        <input type="text" id="nameAr" name="nameAr" class="inp nameAr" placeholder="الاسم بالعربى"
+                            autocomplete="username" required data-state='invalid'>
+                        <div class="toolTip" hidden>أدخل اسمك باللغة العربية بالكامل</div>
+                    </div>
+                    <div class="inpData">
+                        <label for=""> Email</label>
+                        <input type="email" id="email" name="email" class="inp emial" placeholder="Email@server.com"
+                            autocomplete="email" required data-state='invalid'>
+                        <div class="toolTip" hidden>insert a valid Email</div>
+                    </div>
+                    <div class="inpData">
+                        <label for=""> User Name</label>
+                        <input type="text" id="userName" name="userName" class="inp name" placeholder="Username"
+                            autocomplete="username" required data-state='invalid'>
+                        <div class="toolTip" hidden>insert Username to enter the application</div>
+                    </div>
+                    <div class="inpData pass">
+                        <label for=""> Password</label>
+                        <input type="password" id="password" name="password" class="inp name fa-eye-slash"
+                            placeholder="Password" minlength="8" maxlength="20" autocomplete="current-password" required
+                            data-state='invalid'>
+                        <div class="toolTip" hidden>insert password contains strings | numbers | symbols more than once
+                            to strength your password</div>
+                        <p class="info">Insert 8 characters at least (contain numbers & symbols)</p>
+                        <div class="inpData info">
+                            <label for="" id="strengthValue"> Weak</label>
+                            <div class="bar" id="bar-color">
+                                <p class="one"></p>
+                                <p class="two"></p>
+                                <p class="three"></p>
+                                <p class="four"></p>
+                            </div>
+                        </div>
+                        <div class="suggest" hidden>
+                            <p for="">Suggest a strong password</p>
+                            <p class="sug_btn" onclick="suggestPass()">suggest</p>
+                            <i class="fa fa-plus adding" onclick="closeSuggest()"></i>
+                        </div>
+                    </div>
+                    <div class="inpData repeat">
+                        <label for=""> Confirm Password</label>
+                        <input type="password" id="repassword" name="repassword" class="inp name"
+                            placeholder="Repeat password" required autocomplete="current-password" data-state='invalid'>
+                        <div class="toolTip" hidden>Retype the same password for confirmation</div>
+                        <div class="inpData alert" hidden>
+                            <i class='fas fa-exclamation-triangle' style='font-size:16px;color:red'></i>
+                            The passwords you entered do not match. Please try again
+                        </div>
+                    </div>
+                    <p class="info forget">Ask yourself a Question to retrieve the password in case you forget</p>
+                    <div class="inpData Question">
+                        <label for=""> Forget Password</label>
+                        <input type="text" name="forgetpassquestion" id="forgetpassquestion" placeholder="Question"
+                            required data-state='invalid'>
+                        <div class="toolTip" hidden>Type a question ONLY you can remember easily</div>
+                        <input type="text" name="forgetpassanswer" id="forgetpassanswer" placeholder="Answer" required>
+                        <div class="toolTip" hidden>type also the answer that you will be asked to retrive your password
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <h3>Teaching Info</h3>
+                    <div class="teaching">
+                        <div class="adding bar ">
+                            <i class="fa fa-plus adding"></i>
+                        </div>
+                        <div class="type">
+                            <h4>Type of Education</h4>
+                            <div>
+                                <select name="type" class="type" required data-state='invalid'>
+                                    <option value="0">=== Type of Education ===</option>
+                                    <option value="1">National Egyptian Education</option>
+                                    <option value="2">STEM</option>
+                                    <option value="3">SAT</option>
+                                    <option value="4">IG</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="stage" hidden>
+                            <h4>Stage</h4>
+                            <div>
+                                <select name="stage" class="stage" required data-state='invalid'>
+                                    <option value="0">=== Select Stage ===</option>
+                                    <option value="1">Elementary</option>
+                                    <option value="2">Middle</option>
+                                    <option value="3">Senior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="subject" hidden>
+                            <h4>Subject</h4>
+                            <div>
+                                <select name="subject" class="subject" required data-state='invalid'>
+                                    <option value="0">=== Select Subject ===</option>
+                                    <option value="PHY">Physics</option>
+                                    <option value="CHE">Chemistry</option>
+                                    <option value="BIO">Biology</option>
+                                    <option value="GEO">Geology</option>
+                                    <option value="MAT">Maths</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grade" hidden>
+                            <h4>Grade</h4>
+                            <div>
+                                <select name="grade" class="grade" required data-state='invalid'>
+                                    <option value="0">=== Select Grade ===</option>
+                                    <option value="G10">Grade 10</option>
+                                    <option value="G11">Grade 11</option>
+                                    <option value="G12">Grade 12</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="lang" hidden>
+                            <h4>Material</h4>
+                            <section>
+                                <!-- <div name="material" class="material" required data-state='valid'> -->
+                                <div name="lang" class="lang" required data-state='invalid'>
+                                    <label><input type="checkbox" name="lang1" value="ENG"> English</label>
+                                    <label><input type="checkbox" name="lang2" value="AR"> عربى</label>
+                                    <label><input type="checkbox" name="revisor" value="REV"> Revisor</label>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="registerbtn" value="Register">
+                <div class="reg-link">
+                    <p> Already have an account,
+                        <a href="#" class="get-login login" onclick="toggleLogin()">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <!-- ********************************************* -->
+
+
+
+        <!-- ********************************************* -->
+        <!-- START Login Form  -->
+        <!-- ********************************************* -->
+        <div class="form Login active">
+            <h1>Login</h1>
+            <form action="PHP/login.php" method="post" class="login active">
+                <div class="inpData">
+                    <label for=""> User Name</label>
+                    <input type="text" id="userName_login" name="userName" class="inp name" placeholder="Username"
+                        autocomplete="username" required data-state='invalid'>
+                </div>
+                <div class="inpData pass">
+                    <label for=""> Password</label>
+                    <input type="password" id="password_login" name="password" class="inp name fa-eye-slash"
+                        placeholder="Password" minlength="8" autocomplete="current-password" required
+                        data-state='invalid'>
+                </div>
+                <div class="remember">
+                    <label>
+                        <input type="checkbox" name="remember_me" id="remember_me_login">
+                        Remember me
+                    </label>
+                    <a href="#" class="get-login forget">Forget Passowrd?</a>
+                </div>
+                <input type="submit" class="registerbtn login loginBtn" value="Login" id="loginBtn">
+                <div class="reg-link">
+                    <p> Don't have an account?,
+                        <a href="#" class="get-login register" onclick="toggleLogin()">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ********************************************* -->
+
+
+    <!-- ********************************************* -->
+    <!-- END Form Container -->
+    <!-- ********************************************* -->
+</body>
+<script src="Js/login.js"></script>
+
+</html>
